@@ -1,0 +1,43 @@
+##### Git config settings to synchronize across all of my workspaces #####
+[core]
+	autocrlf = true
+	safecrlf = false
+	excludesfile = ~/Documents/rosenberg.gitignore
+	
+[push]
+	default = simple
+[diff]
+	algorithm = histogram
+[credential]
+	helper = manager
+[help]
+	autocorrect = 25
+
+### Aliases
+[alias]
+	#lg = log -30 --oneline --graph --decorate
+	lg = log -30 --graph
+	st = status
+	
+### Formatting / colors
+[format]
+	pretty = format:%C(yellow)%h %C(white)%s %n %C(auto)(%aN) [%d]
+[color]
+	ui = true
+[color "status"]
+	added = cyan
+	changed = red
+	untracked = white
+[color "decorate"]
+	branch = green
+	remoteBranch = cyan
+	HEAD = green
+[color "branch"]
+	current = yellow
+	local = green
+	remote = cyan
+[color "diff"]
+	context = white
+	meta = yellow
+	old = red
+	new = green bold
