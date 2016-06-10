@@ -2,7 +2,8 @@
 [core]
 	autocrlf = true
 	safecrlf = false
-	excludesfile = ~/Documents/rosenberg.gitignore
+	excludesfile = ~/Documents/rosenberg.gitignore	
+	editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 	
 [push]
 	default = simple
