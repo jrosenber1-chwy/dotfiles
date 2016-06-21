@@ -13,7 +13,7 @@
 [credential]
 	helper = manager
 [help]
-	autocorrect = 25
+	autocorrect = 20
 
 ### Aliases
 [alias]
@@ -23,7 +23,7 @@
 	
 ### Formatting / colors
 [format]
-	pretty = format:%C(yellow)%h %C(white)%s %n %C(auto)(%aN) [%d]
+	pretty = format:%C(yellow)%h %C(white)%s %n   %C(red)%aN (%ar)
 [color]
 	ui = true
 [color "status"]
