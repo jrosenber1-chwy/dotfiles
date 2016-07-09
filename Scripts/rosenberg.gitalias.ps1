@@ -2,9 +2,9 @@ function Get-GitLog { & git lg $args }
 Set-Alias -Name lg -Value Get-GitLog
 Set-Alias -Name gl -Value Get-GitLog -Force -Option AllScope
 
-function Get-GitStatus { & git status $args }
-Set-Alias -Name status -Value Get-GitStatus
-Set-Alias -Name gs -Value Get-GitStatus
+function Get-GS { & git status $args } #Get-GitStatus taken by posh-git
+Set-Alias -Name status -Value Get-GS
+Set-Alias -Name gs -Value Get-GS
 
 function Get-GitAdd { & git add $args }
 Set-Alias -Name add -Value Get-GitAdd
