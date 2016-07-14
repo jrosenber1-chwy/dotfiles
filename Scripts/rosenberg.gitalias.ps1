@@ -24,4 +24,4 @@ Set-Alias -Name gd -Value Get-GitDiff
 #git diff
 function Get-GitCommit { & git commit $args }
 Set-Alias -Name commit -Value Get-GitCommit -Force -Option AllScope
-Set-Alias -Name gc -Value Get-GitDiff -Force -Option AllScope
+Set-Alias -Name gc -Value Get-GitCommit -Force -Option AllScope
