@@ -17,9 +17,11 @@
 
 ### Aliases
 [alias]
-	#lg = log -30 --oneline --graph --decorate
 	lg = log -30 --graph
+	slg = log -5 --graph #shortlog
 	st = status
+	chk = checkout
+	dev = "checkout develop"
 	
 ### Formatting / colors
 [format]
