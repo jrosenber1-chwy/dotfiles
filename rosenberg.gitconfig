@@ -13,7 +13,7 @@
 [credential]
 	helper = manager
 [help]
-	autocorrect = 20
+	autocorrect = 25
 
 ### Aliases
 [alias]
@@ -22,7 +22,15 @@
 	st = status
 	chk = checkout
 	dev = "checkout develop"
-	
+	devp = "!git dev; git pull"
+	sha = rev-parse
+	aa = "add --all"
+	addall = "add --all"
+	##rebasedev = "!git checkout develop; git pull;" ## Working on this one - need to figure out how to reference initial branch
+	rebasedev = "!f() {BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout develop; git pull; git checkout $BRANCH; git rebase develop }; f"
+	branch-name = git rev-parse --abbrev-ref HEAD
+	undo-commit = reset --soft HEAD~1
+		
 ### Formatting / colors
 [format]
 	pretty = format:%C(yellow)%h %C(white)%s %n   %C(red)%aN (%ar)

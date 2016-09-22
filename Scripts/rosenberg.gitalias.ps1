@@ -23,10 +23,25 @@ function Use-GitSt { & git st $args } #Git alias
 Set-Alias -Name status -Value Use-GitSt
 Set-Alias -Name gs -Value Use-GitSt
 
+#get commit SHA
+function Use-GitSha 
+{ 
+  if ([String]::IsNullOrEmpty($args)) {
+	$args = "HEAD"
+  }
+  & git sha $args  
+}
+Set-Alias -Name sha -Value Use-GitSha
+
 #git add
 function Use-GitAdd { & git add $args }
 Set-Alias -Name add -Value Use-GitAdd
 Set-Alias -Name ga -Value Use-GitAdd
+
+#git addall
+function Use-GitAddAll { & git addall }
+Set-Alias -Name addall -Value Use-GitAddAll
+Set-Alias -Name aa -Value Use-GitAddAll
 
 #git diff
 function Use-GitDiff { & git diff $args }
@@ -49,6 +64,18 @@ Set-Alias -Name dev -Value Use-GitDev -Force -Option AllScope
 Set-Alias -Name gcd -Value Use-GitDev -Force -Option AllScope
 Set-Alias -Name gdev -Value Use-GitDev -Force -Option AllScope
 
+function Use-GitDevP { & git devp $args } #Git alias
+Set-Alias -Name devp -Value Use-GitDevP -Force -Option AllScope
+Set-Alias -Name gdevp -Value Use-GitDevP -Force -Option AllScope
+
+#git merge
+function Use-GitMerge { & git merge $args }
+Set-Alias -Name merge -Value Use-GitMerge -Force -Option AllScope
+
+#git fetch
+function Use-GitFetch { & git fetch $args }
+Set-Alias -Name fetch -Value Use-GitFetch -Force -Option AllScope
+
 #git pull
 function Use-GitPull { & git pull $args }
 Set-Alias -Name pull -Value Use-GitPull -Force -Option AllScope
@@ -57,3 +84,7 @@ Set-Alias -Name gp -Value Use-GitPull -Force -Option AllScope
 #git push
 function Use-GitPush { & git push $args }
 Set-Alias -Name push -Value Use-GitPush -Force -Option AllScope
+
+#git show
+function Use-GitShow { & git show $args }
+Set-Alias -Name show -Value Use-GitShow -Force -Option AllScope

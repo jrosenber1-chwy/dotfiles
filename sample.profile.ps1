@@ -1,5 +1,5 @@
 # A sample of a profile.ps1 file to use in setting up a new environment
-# Contains basic user information and an include pointing to rosenberg.gitconfig
+# Contains basic preferences and an include pointing to rosenberg.gitalias.ps1
 # Place this in the path returned by $profile.CurrentUserAllHosts
 
 $DebugPreference = "Continue"
