@@ -5,4 +5,4 @@
 	name = Jeff Rosenberg
 	email = rosenberg.jeff@gmail.com
 [include]
-	path = ~/Documents/Git/GitTools/rosenberg.gitconfig
+	path = ~/Documents/ShellTools/Git/rosenberg.gitconfig
