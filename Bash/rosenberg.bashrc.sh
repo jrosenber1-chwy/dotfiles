@@ -3,11 +3,6 @@
 # Any Bash-specific environment variables here
 
 
-# Source more environment variables from .profile
-if [ -f ~/.profile ]; then
-   source ~/.profile
-fi
-
 # Command prompt
 export PS1='\n\[\e[33m\]\w\[\e[m\]\n\$ '
 export PS2=">>> "
@@ -15,10 +10,10 @@ export PS2=">>> "
 # Git-fu
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS="yes"
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"
 export PROMPT_COMMAND='__git_ps1 "\n\[\e[33m\]\w\[\e[m\]" "\n\\\$ ";'
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source ~/Documents/ShellTools/Git/rosenberg.gitalias.sh
+source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
+source "$SHELLTOOLS/Git/rosenberg.gitalias.sh"
 
 #
 # Aliases
