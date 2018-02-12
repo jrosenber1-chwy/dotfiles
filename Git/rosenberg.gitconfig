@@ -18,6 +18,9 @@
 	helper = manager
 [help]
 	autocorrect = 25
+[rebase]
+	autosquash = true
+
 
 ### Aliases
 [alias]
