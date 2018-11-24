@@ -1,0 +1,9 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  { "key": "ctrl+shift+i",          "command": "workbench.action.terminal.new" },
+  { "key": "ctrl+i",                "command": "workbench.action.terminal.toggleTerminal" },
+  { "key": "ctrl+cmd+i",            "command": "workbench.action.terminal.focus",
+                                       "when": "!terminalFocus" },
+  { "key": "ctrl+cmd+i",            "command": "workbench.action.terminal.focusNext",
+                                       "when": "terminalFocus"}
+]

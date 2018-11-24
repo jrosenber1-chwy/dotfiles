@@ -1,0 +1,21 @@
+{
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.startupEditor": "newUntitledFile",
+
+  // Editor behavior
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "`~!#%^&*()-=+{}\\|;:'\",.<>/?",
+
+  // Terminal behavior
+  "terminal.integrated.rightClickCopyPaste": true,
+
+  // Editor view settings
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "none",
+  "workbench.panel.location": "bottom",
+  "window.zoomLevel": 0,
+  "window.newWindowDimensions": "inherit",
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.colorTheme": "Visual Studio Dark",
+}
