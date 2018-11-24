@@ -37,6 +37,7 @@
 	rebasedev = "!f() {BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout develop; git pull; git checkout $BRANCH; git rebase develop }; f"
 	branch-name = git rev-parse --abbrev-ref HEAD
 	undo-commit = reset --soft HEAD~1
+	pick = cherry-pick
 		
 ### Formatting / colors
 [format]

@@ -33,6 +33,7 @@ alias gd='git diff'
 
 alias commit='git commit'
 alias gc='git commit'
+alias amend='git commit -a --amend'
 
 alias chk='git chk'
 alias checkout='git chk'
