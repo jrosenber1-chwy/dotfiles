@@ -8,4 +8,4 @@ if [ -f ~/.profile ]; then
 fi
 
 # Shared configuration
-source "$SHELLTOOLS/Bash/rosenberg.bashrc.sh"
+source "$DOTFILES/Bash/rosenberg.bashrc.sh"

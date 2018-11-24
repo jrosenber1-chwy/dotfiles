@@ -1,0 +1,7 @@
+[user]
+	name = Jeff Rosenberg
+	email = rosenberg.jeff@gmail.com
+
+[include]
+  # Path expansion not supported
+	path = ~/Documents/dotfiles/Git/rosenberg.gitconfig

@@ -1,8 +1,0 @@
-# A sample of a .gitconfig file to use in setting up a new environment
-# Contains basic user information and an include pointing to rosenberg.gitconfig
-
-[user]
-	name = Jeff Rosenberg
-	email = rosenberg.jeff@gmail.com
-[include]
-	path = ~/Documents/ShellTools/Git/rosenberg.gitconfig

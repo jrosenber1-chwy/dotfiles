@@ -2,8 +2,8 @@
 # Contains basic preferences and sources rosenberg.profile.sh
 # Place this in ~/.profile
 
-# Create environment variable pointing to ShellTools
-export SHELLTOOLS="~/Documents/ShellTools"
+# Create environment variable pointing to DOTFILES
+export DOTFILES="~/Documents/dotfiles"
 
 # Shared configuration
-source "$SHELLTOOLS/Bash/rosenberg.profile.sh"
+source "$DOTFILES/Bash/rosenberg.profile.sh"

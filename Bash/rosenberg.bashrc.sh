@@ -13,7 +13,6 @@ GIT_PS1_SHOWCOLORHINTS="yes"
 source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"
 export PROMPT_COMMAND='__git_ps1 "\n\[\e[33m\]\w\[\e[m\]" "\n\\\$ ";'
 source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
-source "$SHELLTOOLS/Git/rosenberg.gitalias.sh"
 
 #
 # Aliases
@@ -26,6 +25,9 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias flushcache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
+
+# Git - reference separate file
+source "$DOTFILES/Git/rosenberg.gitalias.sh"
 
 # Maven commands
 alias mci='mvn clean install -DskipTests -DskipIntegrationTests'
