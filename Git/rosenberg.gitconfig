@@ -1,11 +1,7 @@
 ##### Git config settings to synchronize across all of my workspaces #####
 
-### Settings to keep in a local gitconfig:
-# editor 
-#   - to set for multiple programs on Mac: `export EDITOR="code --new-window --wait"`
-
 [core]
-	autocrlf = true
+	# autocrlf = true | input # Use local gitconfig - set to true on Windows, input on Mac
 	safecrlf = false
 	excludesfile = ~/Documents/dotfiles/Git/rosenberg.gitignore	
 [interactive]

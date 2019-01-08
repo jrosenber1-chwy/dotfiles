@@ -2,6 +2,10 @@
 	name = Jeff Rosenberg
 	email = rosenberg.jeff@gmail.com
 
+[core]
+	autocrlf = true # Set to true on Windows, input on Mac
+	editor = "code --new-window --wait" # If wanted! Or use an env variable on Mac: `export EDITOR="code --new-window --wait"`
+
 [include]
-  # Path expansion not supported
+  # Path expansion not supported, so can't use env variables here
 	path = ~/Documents/dotfiles/Git/rosenberg.gitconfig
