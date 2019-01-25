@@ -12,10 +12,11 @@
 
   // Editor view settings
   "editor.renderControlCharacters": true,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "workbench.panel.location": "bottom",
   "window.zoomLevel": 0,
   "window.newWindowDimensions": "inherit",
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "workbench.colorTheme": "Visual Studio Dark",
+  "javascript.updateImportsOnFileMove.enabled": "always",
 }
