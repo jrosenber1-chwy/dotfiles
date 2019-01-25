@@ -5,5 +5,11 @@
   { "key": "ctrl+cmd+i",            "command": "workbench.action.terminal.focus",
                                        "when": "!terminalFocus" },
   { "key": "ctrl+cmd+i",            "command": "workbench.action.terminal.focusNext",
-                                       "when": "terminalFocus"}
+                                       "when": "terminalFocus"},
+  { "key": "cmd+f",                 "command": "workbench.action.terminal.findNext",
+                                       "when": "terminalFindWidgetFocused" },
+  { "key": "cmd+f",                 "command": "workbench.action.terminal.findNextTerminalFocus",
+                                       "when": "terminalFocus" },
+  { "key": "shift+cmd+o",           "command": "workbench.action.quickOpen" },
+  { "key": "cmd+p",                 "command": "workbench.action.showCommands" },
 ]
