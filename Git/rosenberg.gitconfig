@@ -34,6 +34,9 @@
 	branch-name = git rev-parse --abbrev-ref HEAD
 	undo-commit = reset --soft HEAD~1
 	pick = cherry-pick
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
+	ignored = !git ls-files -v|grep '^S'
 		
 ### Formatting / colors
 [format]
