@@ -12,4 +12,6 @@
                                        "when": "terminalFocus" },
   { "key": "shift+cmd+o",           "command": "workbench.action.quickOpen" },
   { "key": "cmd+p",                 "command": "workbench.action.showCommands" },
+  { "key": "shift+enter",           "command": "extension.jumpy-word", "when": "editorTextFocus" }
+  { "key": "cmd+j",                 "command": "extension.jumpy-word", "when": "editorTextFocus" }
 ]

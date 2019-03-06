@@ -19,4 +19,7 @@
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "workbench.colorTheme": "Visual Studio Dark",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "workbench.tree.horizontalScrolling": true,
+  "editor.emptySelectionClipboard": false,
 }
