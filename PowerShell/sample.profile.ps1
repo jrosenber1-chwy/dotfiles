@@ -3,23 +3,17 @@
 # Place this in the path returned by $profile.CurrentUserAllHosts
 # Place the Posh-Git module in ~\Documents\WindowsPowerShell\Modules\posh-git
 
+$DebugPreference = "SilentlyContinue"
+$VerbosePreference = "SilentlyContinue"
+
+$Env:DOTFILES="$home/Documents/dotfiles" # environment variable for my personal dotfiles
+
+# Shared configuration
+. "$Env:DOTFILES/PowerShell/rosenberg.profile.ps1"
+
+# Place any computer-specific configuration below
+# . "$home/Documents/MyAwesomeProject/MyAwesomeAliases.ps1"
+
+# Once all configs are loaded, allow DEBUG and VERBOSE messages
 $DebugPreference = "Continue"
 $VerbosePreference = "Continue"
-
-# Customize the prompt
-function prompt {
-    $origLastExitCode = $LASTEXITCODE
-    Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
-    Write-VcsStatus
-    Write-Host #Newline
-    $LASTEXITCODE = $origLastExitCode
-    "$('>' * ($nestedPromptLevel + 1)) "
-}
-
-# Load Posh-Git -- must be located in a standard path for modules!
-Import-Module posh-git
-$global:GitPromptSettings.BeforeText = '['
-$global:GitPromptSettings.AfterText  = '] '
-
-# git PowerShell aliases
-. "$($env:USERPROFILE)\Documents\Git\GitTools\Scripts\rosenberg.gitalias.ps1"
