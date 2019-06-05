@@ -3,5 +3,10 @@ Linking an external path, like I'm doing for Git/Bash/PowerShell, isn't supporte
 Mac:
 ```bash
 pushd ~
-ln -s $DOTFILES/Node/.npmrc
+ln -s "$DOTFILES/Node/.npmrc"
+```
+
+```powershell
+pushd ~
+ln -s "$Env:DOTFILES/Node/.npmrc"
 ```

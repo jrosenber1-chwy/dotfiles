@@ -11,15 +11,23 @@
   "terminal.integrated.rightClickCopyPaste": true,
 
   // Editor view settings
-  "editor.renderControlCharacters": true,
+  "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "all",
   "workbench.panel.location": "bottom",
   "window.zoomLevel": 0,
   "window.newWindowDimensions": "inherit",
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-  "workbench.colorTheme": "Visual Studio Dark",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.checkProjectSettingsExclusions": false,
   "workbench.tree.horizontalScrolling": true,
   "editor.emptySelectionClipboard": false,
+
+  // Powershell extension
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.developer.editorServicesLogLevel": "Verbose",
+  "terminal.integrated.shell.windows": "powershell.exe",
+  "terminal.integrated.shell.osx": "/usr/local/microsoft/powershell/6/pwsh",
+  "terminal.integrated.shellArgs.osx": [],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
