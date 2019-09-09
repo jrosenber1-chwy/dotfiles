@@ -25,7 +25,7 @@
 	st = status
 	chk = checkout
 	dev = "checkout develop"
-	devp = "!git dev; git pull"
+	devp = "!git checkout develop && git pull"
 	sha = rev-parse
 	aa = "add --all"
 	addall = "add --all"
