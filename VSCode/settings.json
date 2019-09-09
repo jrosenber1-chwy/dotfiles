@@ -26,8 +26,10 @@
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.developer.editorServicesLogLevel": "Verbose",
   "terminal.integrated.shell.windows": "powershell.exe",
-  "terminal.integrated.shell.osx": "/usr/local/microsoft/powershell/6/pwsh",
+  "terminal.integrated.shell.osx": "/usr/local/bin/pwsh-preview",
   "terminal.integrated.shellArgs.osx": [],
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "extensions.ignoreRecommendations": false,
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
