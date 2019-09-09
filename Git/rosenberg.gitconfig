@@ -3,7 +3,7 @@
 [core]
 	# autocrlf = true | input # Use local gitconfig - set to true on Windows, input on Mac
 	safecrlf = false
-	excludesfile = ~/Documents/dotfiles/Git/rosenberg.gitignore	
+	excludesfile = ~/dotfiles/Git/rosenberg.gitignore	
 [interactive]
 	singleKey = true
 [push]
