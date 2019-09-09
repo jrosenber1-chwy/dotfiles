@@ -2,17 +2,32 @@
 
 # Any Bash-specific environment variables here
 
-
-# Command prompt
+#
+# Customize prompt
+#
 export PS1='\n\[\e[33m\]\w\[\e[m\]\n\$ '
 export PS2=">>> "
 
+#
 # Git setup
+#
+
+# Source these if Xcode is installed
+if [ -d /Applications/Xcode.app ]; then
+  source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"
+  source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
+fi
+
+# Source these if just Command Line Tools are installed
+if [ -d /Library/Developer ]; then
+  source "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
+  source "/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh"
+fi
+
+# Config
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS="yes"
-source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"
 export PROMPT_COMMAND='__git_ps1 "\n\[\e[33m\]\w\[\e[m\]" "\n\\\$ ";'
-source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
 
 #
 # Aliases
