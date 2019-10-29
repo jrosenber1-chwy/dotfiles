@@ -21,7 +21,7 @@ alias slg='git slg'
 alias status='git st'
 alias gs='git st'
 
-alias sha='git sha HEAD'
+alias sha='git sha'
 
 alias add='git add'
 alias ga='git add'

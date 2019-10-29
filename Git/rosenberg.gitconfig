@@ -26,17 +26,19 @@
 	chk = checkout
 	dev = "checkout develop"
 	devp = "!git checkout develop && git pull"
-	sha = rev-parse
+	pushup = "push -u origin HEAD"
+	sha = rev-parse HEAD
 	aa = "add --all"
 	addall = "add --all"
-	##rebasedev = "!git checkout develop; git pull;" ## Working on this one - need to figure out how to reference initial branch
 	rebasedev = "!f() {BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout develop; git pull; git checkout $BRANCH; git rebase develop }; f"
-	branch-name = git rev-parse --abbrev-ref HEAD
+	branch-name = rev-parse --abbrev-ref HEAD
+	undo = reset --soft HEAD~1
 	undo-commit = reset --soft HEAD~1
 	pick = cherry-pick
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
 	ignored = !git ls-files -v|grep '^S'
+	amend = "!git add --all && git commit --amend"
 		
 ### Formatting / colors
 [format]

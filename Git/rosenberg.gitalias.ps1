@@ -24,13 +24,7 @@ Set-Alias -Name status -Value Use-GitSt
 Set-Alias -Name gs -Value Use-GitSt
 
 #get commit SHA
-function Use-GitSha 
-{ 
-  if ([String]::IsNullOrEmpty($args)) {
-	$args = "HEAD"
-  }
-  & git sha $args  
-}
+function Use-GitSha { & git sha }
 Set-Alias -Name sha -Value Use-GitSha
 
 #git add
