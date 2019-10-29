@@ -31,5 +31,8 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "extensions.ignoreRecommendations": false,
-  "java.errors.incompleteClasspath.severity": "ignore"
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "powershell.powerShellExePath": "/usr/local/bin/pwsh-preview",
+  "terminal.integrated.rendererType": "dom",
+  "powershell.promptToUpdatePowerShell": false
 }
