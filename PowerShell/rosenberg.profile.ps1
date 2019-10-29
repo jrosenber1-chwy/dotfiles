@@ -2,11 +2,19 @@
 $Env:XDG_DATA_HOME="$home/.local/share"
 $Env:XDG_CONFIG_HOME="$home/.config"
 
-# Load Posh-Git -- must be located in a standard path for modules!
-# Or install with: PowerShellGet\Install-Module posh-git -Scope CurrentUser
+# Load posh-git -- must be located in a standard path for modules!
+# Or install with: Install-Module posh-git -Scope CurrentUser
 Import-Module posh-git
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
+
+# Load oh-my-posh -- must be located in a standard path for modules!
+# Or install with: Install-Module oh-my-posh -Scope CurrentUser
+Import-Module oh-my-posh
+Set-Theme Paradox
+
+# oh-my-posh configuration
+$DefaultUser = 'Jeff'
 
 # Source Path on macOS
 # Per https://github.com/PowerShell/PowerShell/issues/6027
