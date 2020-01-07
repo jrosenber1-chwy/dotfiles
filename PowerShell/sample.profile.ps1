@@ -6,7 +6,7 @@
 $DebugPreference = "SilentlyContinue"
 $VerbosePreference = "SilentlyContinue"
 
-$Env:DOTFILES="$home/Documents/dotfiles" # environment variable for my personal dotfiles
+$Env:DOTFILES="$home/dotfiles" # environment variable for my personal dotfiles
 
 # Shared configuration
 . "$Env:DOTFILES/PowerShell/rosenberg.profile.ps1"

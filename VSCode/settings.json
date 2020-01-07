@@ -16,17 +16,17 @@
   "workbench.panel.location": "bottom",
   "window.zoomLevel": 0,
   "window.newWindowDimensions": "inherit",
-  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FuraCode Nerd Font', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.checkProjectSettingsExclusions": false,
-  "workbench.tree.horizontalScrolling": true,
+  "workbench.list.horizontalScrolling": true,
   "editor.emptySelectionClipboard": false,
 
-  // Powershell extension
+  // Terminal
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.developer.editorServicesLogLevel": "Verbose",
   "terminal.integrated.shell.windows": "powershell.exe",
-  "terminal.integrated.shell.osx": "/usr/local/bin/pwsh-preview",
+  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
   "terminal.integrated.shellArgs.osx": [],
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -34,5 +34,8 @@
   "java.errors.incompleteClasspath.severity": "ignore",
   "powershell.powerShellExePath": "/usr/local/bin/pwsh-preview",
   "terminal.integrated.rendererType": "dom",
-  "powershell.promptToUpdatePowerShell": false
+  "powershell.promptToUpdatePowerShell": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.windowsExec": "C:\\Windows\\System32\\powershell.exe",
+  "terminal.integrated.cursorStyle": "line"
 }

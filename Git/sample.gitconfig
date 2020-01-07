@@ -8,4 +8,4 @@
 
 [include]
   # Path expansion not supported, so can't use env variables here
-	path = ~/Documents/dotfiles/Git/rosenberg.gitconfig
+	path = ~/dotfiles/Git/rosenberg.gitconfig

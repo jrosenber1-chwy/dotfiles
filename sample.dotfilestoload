@@ -1,0 +1,14 @@
+# dotfiles to load
+# include each module to load below, each on its own line
+# comment out or remove lines that aren't wanted
+
+bash
+docker
+git
+java
+maven
+node
+# node_olson
+openshift
+web
+vscode

@@ -1,6 +1,6 @@
-################################################
+########################################
 # Docker aliases
-################################################
+########################################
 
 # docker container ls
 function Use-DockerLs { & docker container ls $args } 
@@ -21,3 +21,9 @@ Set-Alias -Name dlf -Value Use-DockerContainerLogsFollow
 # docker volume ls
 function Use-DockerVolumeLs { & docker volume ls $args } 
 Set-Alias -Name dvls -Value Use-DockerVolumeLs
+
+########################################
+# Docker environment variables
+########################################
+
+$Env:COMPOSE_HTTP_TIMEOUT=300

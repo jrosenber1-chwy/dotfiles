@@ -1,4 +1,6 @@
-##### Git config settings to synchronize across all of my workspaces #####
+######################################## 
+# Git config settings to synchronize across all of my workspaces 
+########################################
 
 [core]
 	# autocrlf = true | input # Use local gitconfig - set to true on Windows, input on Mac

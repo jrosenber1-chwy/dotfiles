@@ -1,14 +1,13 @@
-################################################
-# PowerShell wrappers for Git commands / aliases
-#-----------------------------------------------
-# 
+########################################
+# Shell wrappers for Git commands / aliases
+######################################## 
 # Where possible, prefer to create aliases in
-# .gitconfig and just wrap in PowerShell
+# .gitconfig and just wrap in shell aliases
 #
 # This way, can update command behaviors,
 # formatting, etc. across all providers
 # in .gitconfig 
-################################################
+########################################
 
 #git log
 function Use-GitLg { & git lg $args } #Git alias
