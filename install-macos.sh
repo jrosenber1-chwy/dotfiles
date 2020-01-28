@@ -22,37 +22,42 @@ dotfiles_include() {
 # Install Homebrew packages
 ########################################
 
-brew install bash lzo gettext readline ripgrep coreutils
-brew cask install powershell-preview
+brew install bash lzo gettext readline ripgrep coreutils || true
+brew cask install powershell || true
 
 if dotfiles_include "java"; then
-  brew cask install adoptopenjdk8 adoptopenjdk11
-  brew install jenv
+  brew tap AdoptOpenJDK/openjdk || true
+  brew cask install adoptopenjdk8 adoptopenjdk11 || true
+  brew install jenv && \
+    eval "$(jenv init -)" && \
+    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/ && \
+    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/ && \
+    jenv global 11.0 || true  
 fi
 
 if dotfiles_include "git"; then
-  brew install git bash-completion bash-git-prompt 
+  brew install git bash-completion bash-git-prompt || true
 fi
 
 if dotfiles_include "maven"; then
-  brew install maven
+  brew install maven || true
 fi
 
 if dotfiles_include "bash"; then # Bash development... Bash itself it always needed
-  brew install bats-core gnu-getopt
+  brew install bats-core gnu-getopt || true
 fi
 
 if dotfiles_include "openshift"; then
-  brew install openshift-cli
+  brew install openshift-cli || true
 fi
 
 if dotfiles_include "web"; then
-  brew install httpie jq
+  brew install httpie jq || true
 fi
 
 if dotfiles_include "node"; then
   # Intall NVM
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash || true
   pushd $HOME
   ln -s "$DOTFILES/Node/.npmrc"
   popd
@@ -60,7 +65,7 @@ fi
 
 if dotfiles_include "node_olson"; then
   # Intall NVM
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash || true
   pushd $HOME
   ln -s "$DOTFILES/Node_Olson/.npmrc"
   popd
