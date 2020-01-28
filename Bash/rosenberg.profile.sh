@@ -38,7 +38,7 @@ dotfiles_include() { # Expects one argument -- module name
   if [[ ! -f $DOTFILESTOLOAD ]]; then
     return 2 # Return failure immediately if we can't find $DOTFILESTOLOAD
   else
-    matches=$(grep -ci "$1" $DOTFILESTOLOAD) # Count the number of times module name appears
-    [[ $matches -gt 0 ]] # Return success if it appears at least once, failure otherwise
+    matches=$(grep -cix "$1" $DOTFILESTOLOAD) # Count the number of times module name appears
+    [[ $matches -eq 1 ]] # Return success if it appears at least once, failure otherwise
   fi
 }
