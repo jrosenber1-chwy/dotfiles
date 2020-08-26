@@ -61,6 +61,9 @@ if (Use-Dotfile "git") {
 if (Use-Dotfile "docker") {
   . "$Env:DOTFILES/Docker/rosenberg.docker.ps1"
 }
+if (Use-Dotfile "dotnet") {
+  . "$Env:DOTFILES/Dotnet/rosenberg.dotnet.ps1"
+}
 if (Use-Dotfile "maven") {
   . "$Env:DOTFILES/Maven/rosenberg.maven.ps1"
 }

@@ -4,6 +4,7 @@
 
 bash
 docker
+dotnet
 git
 java
 maven
