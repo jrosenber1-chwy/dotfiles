@@ -46,7 +46,8 @@ fi
 ########################################
 # Source aliases, variables, extensions, etc. for other tools
 ########################################
-dotfiles_include "git"    && source "$DOTFILES/Git/rosenberg.gitalias.sh" # Git
-dotfiles_include "docker" && source "$DOTFILES/Docker/rosenberg.docker.sh" # Docker
-dotfiles_include "maven"  && source "$DOTFILES/Maven/rosenberg.maven.sh" #Maven
-dotfiles_include "java"   && source "$DOTFILES/Java/rosenberg.java.sh" # Java
+dotfiles_include "git"        && source "$DOTFILES/Git/rosenberg.gitalias.sh" # Git
+dotfiles_include "docker"     && source "$DOTFILES/Docker/rosenberg.docker.sh" # Docker
+dotfiles_include "maven"      && source "$DOTFILES/Maven/rosenberg.maven.sh" #Maven
+dotfiles_include "java"       && source "$DOTFILES/Java/rosenberg.java.sh" # Java
+dotfiles_include "openshift"  && source "$DOTFILES/Openshift/rosenberg.openshift.sh" # Openshift
