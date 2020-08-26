@@ -25,17 +25,16 @@
   // Terminal
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.developer.editorServicesLogLevel": "Verbose",
-  "terminal.integrated.shell.windows": "powershell.exe",
+  "terminal.integrated.shell.windows": "pwsh.exe",
   "terminal.integrated.shell.osx": "/usr/local/bin/bash",
   "terminal.integrated.shellArgs.osx": [],
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "extensions.ignoreRecommendations": false,
+  "extensions.ignoreRecommendations": true,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "powershell.powerShellExePath": "/usr/local/bin/pwsh-preview",
   "terminal.integrated.rendererType": "dom",
   "powershell.promptToUpdatePowerShell": false,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.external.windowsExec": "C:\\Windows\\System32\\powershell.exe",
+  "terminal.external.windowsExec": "pwsh.exe",
   "terminal.integrated.cursorStyle": "line"
 }

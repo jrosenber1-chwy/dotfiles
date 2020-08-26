@@ -34,13 +34,36 @@ if ($IsMacOS -and $env:PATH -notmatch '\b/usr/local/bin\b') { # prevent repeated
 }
 
 ########################################
+# Determine dotfiles modules to load
+########################################
+function Use-Dotfile() { # Expects one argument -- module name
+  Param(
+    [Parameter(Mandatory=$true)]
+    [string]$ModuleName
+  )
+  if (! (Test-Path -Path $Env:DOTFILESTOLOAD)) {
+    throw "Can't find `$DOTFILESTOLOAD file"
+  }
+  else {
+    $dotfilesContent = Get-Content -Path $Env:DOTFILESTOLOAD
+    return $dotfilesContent -contains $ModuleName # Needs a complete (but case-insensitive) match, so commented lines won't match
+  }
+}
+
+########################################
 # Source aliases, variables, extensions, etc. for other tools
 ########################################
 
-. "$Env:DOTFILES/Git/rosenberg.gitalias.ps1"
 . "$Env:DOTFILES/PowerShell/rosenberg.pwshalias.ps1"
-. "$Env:DOTFILES/Docker/rosenberg.docker.ps1"
-. "$Env:DOTFILES/Maven/rosenberg.maven.ps1"
+if (Use-Dotfile "git") {
+  . "$Env:DOTFILES/Git/rosenberg.gitalias.ps1"
+}
+if (Use-Dotfile "docker") {
+  . "$Env:DOTFILES/Docker/rosenberg.docker.ps1"
+}
+if (Use-Dotfile "maven") {
+  . "$Env:DOTFILES/Maven/rosenberg.maven.ps1"
+}
 
 ########################################
 # Customize the prompt
