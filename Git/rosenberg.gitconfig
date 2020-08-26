@@ -10,8 +10,10 @@
 	singleKey = true
 [push]
 	default = simple
+[pull]
+	rebase = true
 [diff]
-	algorithm = histogram
+	algorithm = minimal
 [credential]
 	helper = manager
 [help]
@@ -39,8 +41,9 @@
 	pick = cherry-pick
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
-	ignored = !git ls-files -v|grep '^S'
+	ignored = "git status --ignored"
 	amend = "!git add --all && git commit --amend"
+	push = "stash push"
 		
 ### Formatting / colors
 [format]

@@ -30,6 +30,7 @@
 *.rar
 *.tar
 *.zip
+*.deb
 
 ########################################
 # Logs and databases #
@@ -65,3 +66,4 @@ Thumbs.db
 ########################################
 *.factorypath
 .java-version
+nbgv
