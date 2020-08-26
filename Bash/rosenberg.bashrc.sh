@@ -51,3 +51,4 @@ dotfiles_include "docker"     && source "$DOTFILES/Docker/rosenberg.docker.sh" #
 dotfiles_include "maven"      && source "$DOTFILES/Maven/rosenberg.maven.sh" #Maven
 dotfiles_include "java"       && source "$DOTFILES/Java/rosenberg.java.sh" # Java
 dotfiles_include "openshift"  && source "$DOTFILES/Openshift/rosenberg.openshift.sh" # Openshift
+dotfiles_include "olson"      && source "$DOTFILES/Olson/rosenberg.olson.sh" # Work-specific config
