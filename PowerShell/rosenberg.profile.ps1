@@ -67,6 +67,9 @@ if (Use-Dotfile "dotnet") {
 if (Use-Dotfile "maven") {
   . "$Env:DOTFILES/Maven/rosenberg.maven.ps1"
 }
+if (Use-Dotfile "olson") {
+  . "$Env:DOTFILES/Olson/rosenberg.olson.ps1"
+}
 
 ########################################
 # Customize the prompt

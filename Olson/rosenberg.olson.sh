@@ -16,6 +16,7 @@ alias hyatt='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
 ########################################
 
 DOCKER_REPO="dockerreg-prod.icfolson.com"
+DOCKER_BUILDKIT=1 # Turn on Docker buildkit
 
 REMOVE_OLSON_ENV_VARS() {
   unset TALLY_PATH
