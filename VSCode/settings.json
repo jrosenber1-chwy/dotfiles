@@ -36,5 +36,13 @@
   "powershell.promptToUpdatePowerShell": false,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.windowsExec": "pwsh.exe",
-  "terminal.integrated.cursorStyle": "line"
+  "terminal.integrated.cursorStyle": "line",
+  "maven.executable.path": "/Users/jrosenberg/.jenv/shims/mvn",
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.kubectl-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/kubectl/kubectl",
+    "vs-kubernetes.minikube-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+    "vs-kubernetes.draft-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  },
+  "workbench.colorTheme": "Visual Studio 2019 Dark"
 }
