@@ -81,3 +81,8 @@ if dotfiles_include "vscode"; then
   ln -s "$DOTFILES/VSCode/snippets/"
   popd
 fi
+
+if dotfiles_include "olson"; then
+  curl https://raw.githubusercontent.com/ahnick/encpass.sh/master/encpass.sh -o /usr/local/bin/encpass.sh && \
+  chmod u+x /usr/local/bin/encpass.sh
+fi

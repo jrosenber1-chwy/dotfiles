@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+DOCKER_REPO="dockerreg-prod.icfolson.com"
+DOCKER_BUILDKIT=1 # Turn on Docker buildkit
+
 ########################################
 # Project-specific aliases
 ########################################
@@ -11,13 +14,20 @@ alias hgp='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
 alias hyatt='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
 
 ########################################
-# Securely access my password as an environment variable
-# WIP, don't commit this until I have something secure
+# Securely store and access my password
+# see https://github.com/plyint/encpass.sh
 ########################################
 
-DOCKER_REPO="dockerreg-prod.icfolson.com"
-DOCKER_BUILDKIT=1 # Turn on Docker buildkit
+YOSEMITE_USERNAME="jrosenberg"
+GET_YOSEMITE_PWD() {
+  source /usr/local/bin/encpass.sh 
+  echo "$(get_secret yosemite password)"
+}
+SET_YOSEMITE_PWD() {
+  encpass.sh update yosemite password
+}
 
+# Unset all variables - use this when I need to share logs or things like that
 REMOVE_OLSON_ENV_VARS() {
   unset TALLY_PATH
   unset CORE_PATH
@@ -29,7 +39,6 @@ REMOVE_OLSON_ENV_VARS() {
   unset INGESTION_DATA_PATH
   unset INTEGRATION_PATH
   unset YOSEMITE_USERNAME
-  unset YOSEMITE_PASSWORD
   unset INGESTION_PATH
   unset HOTEL_QA_SVC
   unset HOTEL_STG_SVC
