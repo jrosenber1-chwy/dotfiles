@@ -39,6 +39,8 @@ alias checkout='git chk'
 
 alias dev='git dev'
 alias devp='git devp'
+alias main='git main'
+alias mainp='git mainp'
 
 alias merge='git merge'
 

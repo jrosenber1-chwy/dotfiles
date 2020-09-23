@@ -54,12 +54,15 @@ Set-Alias -Name gchk -Value Use-GitChk -Force -Option AllScope
 
 function Use-GitDev { & git dev $args } #Git alias
 Set-Alias -Name dev -Value Use-GitDev -Force -Option AllScope
-Set-Alias -Name gcd -Value Use-GitDev -Force -Option AllScope
-Set-Alias -Name gdev -Value Use-GitDev -Force -Option AllScope
 
 function Use-GitDevP { & git devp $args } #Git alias
 Set-Alias -Name devp -Value Use-GitDevP -Force -Option AllScope
-Set-Alias -Name gdevp -Value Use-GitDevP -Force -Option AllScope
+
+function Use-GitMain { & git main $args } #Git alias
+Set-Alias -Name main -Value Use-GitMain -Force -Option AllScope
+
+function Use-GitMainP { & git main $args } #Git alias
+Set-Alias -Name mainp -Value Use-GitMainP -Force -Option AllScope
 
 #git merge
 function Use-GitMerge { & git merge $args }

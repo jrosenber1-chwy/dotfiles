@@ -18,6 +18,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 alias cd='pushd' # Always use pushd instead of cd
 alias clrd='dirs -c' # Reset pushd/popd stack
+alias cleard='dirs -c' # Reset pushd/popd stack
 alias resetd='dirs -c' # Reset pushd/popd stack
 alias returnd='pushd -0 && dirs -c' # Go back to the beginning of the pushd/popd stack
 eval $(thefuck --alias)
