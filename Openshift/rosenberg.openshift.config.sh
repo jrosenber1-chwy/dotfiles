@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 minishift profile set tally
 minishift config set disk-size 20GB
