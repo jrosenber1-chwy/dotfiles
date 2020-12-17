@@ -33,16 +33,25 @@ export PS2=">>> "
 echo "Bash path: $(which bash)"
 
 ########################################
+# Commands and functions
+########################################
+
+# make a directory and cd to it
+mcd() {
+    test -d "$1" || mkdir -p "$1" && pushd "$1"
+}
+
+########################################
 # Git setup
 ########################################
 
 if dotfiles_include "git"; then
   # Source these if Git is installed through Homebrew
-  if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  if [ -f "${brew}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     echo "Using Git via Homebrew: $(which git)"
-    source "$(brew --prefix git)/etc/bash_completion.d/git-completion.bash"
-    source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
-    __GIT_PROMPT_DIR="$(brew --prefix git)/etc/bash_completion.d"
+    source "${brew}/etc/bash_completion.d/git-completion.bash"
+    source "${brew}/etc/bash_completion.d/git-prompt.sh"
+    __GIT_PROMPT_DIR="${brew}/etc/bash_completion.d"
   # Source these if Xcode is installed
   elif [ -d /Applications/Xcode.app ]; then
     echo "Using Git via Xcode: $(which git)"

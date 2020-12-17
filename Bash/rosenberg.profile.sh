@@ -21,6 +21,7 @@ alias clrd='dirs -c' # Reset pushd/popd stack
 alias cleard='dirs -c' # Reset pushd/popd stack
 alias resetd='dirs -c' # Reset pushd/popd stack
 alias returnd='pushd -0 && dirs -c' # Go back to the beginning of the pushd/popd stack
+alias showd='dirs -v' # Show the pushd/popd stack
 eval $(thefuck --alias)
 
 # Mac OS

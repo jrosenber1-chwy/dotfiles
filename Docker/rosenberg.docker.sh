@@ -7,6 +7,10 @@ export DOCKER_BUILDKIT=1
 # Docker aliases
 ########################################
 
+function docker_debug() {
+  docker run -it --name=test --rm "$1" ${2:-/bin/bash}
+}
+
 alias dls='docker container ls'
 alias dlsa='docker container ls -a'
 alias drm='docker container rm'
@@ -14,6 +18,7 @@ alias drmf='docker container rm -f'
 alias dl='docker container logs'
 alias dlf='docker container logs --tail 100 -f'
 alias dvls='docker volume ls'
+alias dbug='docker_debug'
 
 ########################################
 # Docker-Compose aliases

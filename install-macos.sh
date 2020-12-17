@@ -22,7 +22,7 @@ dotfiles_include() {
 # Install Homebrew packages
 ########################################
 
-brew install bash lzo gettext readline ripgrep coreutils || true
+brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 || true
 brew cask install powershell || true
 
 if dotfiles_include "java"; then
@@ -36,7 +36,7 @@ if dotfiles_include "java"; then
 fi
 
 if dotfiles_include "git"; then
-  brew install git bash-completion bash-git-prompt || true
+  brew install git bash-git-prompt || true
 fi
 
 if dotfiles_include "maven"; then
