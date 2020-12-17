@@ -4,28 +4,40 @@ DOCKER_REPO="dockerreg-prod.icfolson.com"
 DOCKER_BUILDKIT=1 # Turn on Docker buildkit
 
 ########################################
+# Securely store and access Yosemite credneitla
+# see https://github.com/plyint/encpass.sh
+########################################
+source /usr/local/bin/encpass.sh 
+
+YOSEMITE_USERNAME="jrosenberg"
+GET_YOSEMITE_CRED() {
+  source /usr/local/bin/encpass.sh
+  echo $(get_secret yosemite $1)
+}
+GET_YOSEMITE_PWD() {
+  source /usr/local/bin/encpass.sh
+  echo $(get_secret yosemite password)
+}
+LIST_YOSEMITE_CREDS() {
+  echo $(/usr/local/bin/encpass.sh ls yosemite)
+}
+SET_YOSEMITE_PWD() {
+  /usr/local/bin/encpass.sh update yosemite password
+}
+SET_YOSEMITE_CRED() {
+  /usr/local/bin/encpass.sh update yosemite $1
+}
+
+########################################
 # Project-specific aliases
 ########################################
 
-source /Users/jrosenberg/Documents/Projects/Hilton/HiltonAliases.sh
+# source /Users/jrosenberg/Documents/Projects/Hilton/HiltonAliases.sh
 source /Users/jrosenberg/Documents/Projects/Tally/CoreAliases.sh
-source /Users/jrosenberg/Documents/Projects/AEP/AepAliases.sh
-alias hgp='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
-alias hyatt='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
-
-########################################
-# Securely store and access my password
-# see https://github.com/plyint/encpass.sh
-########################################
-
-YOSEMITE_USERNAME="jrosenberg"
-GET_YOSEMITE_PWD() {
-  source /usr/local/bin/encpass.sh 
-  echo "$(get_secret yosemite password)"
-}
-SET_YOSEMITE_PWD() {
-  encpass.sh update yosemite password
-}
+# source /Users/jrosenberg/Documents/Projects/AEP/AepAliases.sh
+source /Users/jrosenberg/Documents/Projects/Convergence/local-config/ConvergenceAliases.sh
+# alias hgp='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
+# alias hyatt='pushd ~/Documents/Projects/Hyatt/_git/hyatt-client-services'
 
 # Unset all variables - use this when I need to share logs or things like that
 REMOVE_OLSON_ENV_VARS() {
