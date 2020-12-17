@@ -1,6 +1,28 @@
 #!/usr/bin/env bash
 
-# Any Bash-specific environment variables here
+########################################
+# Profile .bashrc
+# per https://www.rosipov.com/blog/profiling-slow-bashrc/
+# Set PROFILE_BASHRC to 1 to enable
+########################################
+PROFILE_BASHRC=${PROFILE_BASHRC:-0}
+if [[ $PROFILE_BASHRC -eq 1 ]]; then
+  # On macOS, need to use GNU CoreUtils date, which is aliased to gdate
+  PS4='+ $(gdate "+%s.%N")\011 '
+  exec 3>&2 2>/tmp/bashstart.$$.log
+  set -x
+fi
+
+########################################
+# Bash completion
+########################################
+brew=$(brew --prefix)
+[[ -r "${brew}/etc/profile.d/bash_completion.sh" ]] && source "${brew}/etc/profile.d/bash_completion.sh"
+
+########################################
+# Bash-specific environment variables
+########################################
+export BASH_COMPLETION_COMPAT_DIR="${brew}/etc/bash_completion.d"
 
 ########################################
 # Customize prompt
@@ -54,3 +76,12 @@ dotfiles_include "java"       && source "$DOTFILES/Java/rosenberg.java.sh" # Jav
 dotfiles_include "openshift"  && source "$DOTFILES/Openshift/rosenberg.openshift.sh" # Openshift
 dotfiles_include "olson"      && source "$DOTFILES/Olson/rosenberg.olson.sh" # Work-specific config
 dotfiles_include "aws"        && source "$DOTFILES/AWS/rosenberg.aws.sh" #AWS
+
+########################################
+# End profile .bashrc
+# per https://www.rosipov.com/blog/profiling-slow-bashrc/
+########################################
+if [[ $PROFILE_BASHRC -eq 1 ]]; then
+  set +x
+  exec 2>&3 3>&-
+fi
