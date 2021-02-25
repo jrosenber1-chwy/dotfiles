@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ ${DEBUG_BASHRC} -eq 1 ]] && echo "rosenberg.docker.sh" && echo
+
 # Enabled Docker buildkit
 export DOCKER_BUILDKIT=1
 

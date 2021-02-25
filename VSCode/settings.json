@@ -11,7 +11,7 @@
   "terminal.integrated.rightClickCopyPaste": true,
 
   // Editor view settings
-  "editor.renderControlCharacters": false,
+  "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "workbench.panel.location": "bottom",
   "window.zoomLevel": 0,
@@ -44,5 +44,16 @@
     "vs-kubernetes.minikube-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
     "vs-kubernetes.draft-path.mac": "/Users/jrosenberg/.vs-kubernetes/tools/draft/darwin-amd64/draft"
   },
-  "workbench.colorTheme": "Visual Studio 2019 Dark"
+  "scm.autoReveal": false,
+  "explorer.autoReveal": false,
+  "problems.autoReveal": false,
+  "mssql.connections": [
+    {
+      "server": "{{put-server-name-here}}",
+      "database": "{{put-database-name-here}}",
+      "user": "{{put-username-here}}",
+      "password": "{{put-password-here}}"
+    }
+  ],
+  "workbench.colorTheme": "Default Light+"
 }

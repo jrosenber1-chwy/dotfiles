@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ ${DEBUG_BASHRC} -eq 1 ]] && echo "rosenberg.maven.sh" && echo
+
 ########################################
 # Maven aliases
 ########################################

@@ -16,7 +16,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 # Aliases
 #########################################
 
-alias cd='pushd' # Always use pushd instead of cd
+# alias cd='pushd' # Always use pushd instead of cd # moving this to the bottom of rosenberg.bashrc.sh
 alias clrd='dirs -c' # Reset pushd/popd stack
 alias cleard='dirs -c' # Reset pushd/popd stack
 alias resetd='dirs -c' # Reset pushd/popd stack

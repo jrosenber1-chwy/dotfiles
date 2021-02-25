@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ ${DEBUG_BASHRC} -eq 1 ]] && echo "rosenberg.dotnet.sh" && echo
+
 function dotnet_build_sql() {
   dotnet build "$1" /nowarn:SQL71502
 }

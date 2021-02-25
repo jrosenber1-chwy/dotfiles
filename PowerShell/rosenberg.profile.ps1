@@ -56,7 +56,7 @@ function Use-Dotfile() { # Expects one argument -- module name
 
 . "$Env:DOTFILES/PowerShell/rosenberg.pwshalias.ps1"
 if (Use-Dotfile "git") {
-  . "$Env:DOTFILES/Git/rosenberg.gitalias.ps1"
+  . "$Env:DOTFILES/Git/rosenberg.git.ps1"
 }
 if (Use-Dotfile "docker") {
   . "$Env:DOTFILES/Docker/rosenberg.docker.ps1"

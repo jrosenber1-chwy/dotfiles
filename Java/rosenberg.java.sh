@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+[[ ${DEBUG_BASHRC} -eq 1 ]] && echo "rosenberg.java.sh" && echo
+
 ########################################
 # Initialize jEnv
 ########################################

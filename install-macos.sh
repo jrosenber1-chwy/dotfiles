@@ -48,7 +48,7 @@ if dotfiles_include "bash"; then # Bash development... Bash itself it always nee
 fi
 
 if dotfiles_include "openshift"; then
-  brew install openshift-cli hyperkit docker-machine-driver-hyperkit helm || true
+  brew install openshift-cli hyperkit docker-machine-driver-hyperkit helm kube-ps1 || true
   sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   brew cask install minishift || true
