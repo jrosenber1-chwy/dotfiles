@@ -90,8 +90,5 @@ if [[ $PROFILE_BASHRC -eq 1 ]]; then
   set +x
   exec 2>&3 3>&-
 fi
-<<<<<<< HEAD
-=======
 
 alias cd='pushd' # Always use pushd instead of cd
->>>>>>> 7c173e4 (Add optional debugging, new aliases)

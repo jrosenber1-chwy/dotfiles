@@ -46,6 +46,9 @@ function Use-GitCommit { & git commit $args }
 Set-Alias -Name commit -Value Use-GitCommit -Force -Option AllScope
 Set-Alias -Name gc -Value Use-GitCommit -Force -Option AllScope
 
+function Use-GitAmend { & git add --all; git commit --amend --no-edit }
+Set-Alias -Name amend -Value Use-GitAmend -Force -Option AllScope
+
 #git checkout
 function Use-GitChk { & git chk $args } #Git alias
 Set-Alias -Name checkout -Value Use-GitChk -Force -Option AllScope
