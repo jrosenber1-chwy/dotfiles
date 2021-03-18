@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 [[ ${DEBUG_BASHRC} -eq 1 ]] && echo "rosenberg.openshift.sh" && echo
+DEBUG_IMAGE="${DEBUG_IMAGE:-busybox}"
 
 # Openshift uses `oc`, use `kc` for kubectl
 alias kc='kubectl'
 alias ctx='kubectx'
 alias kctx='kubectx'
+alias kns='kubens'
 complete -F __start_kubectl kc # Enable Bash completion for `kc`
 complete -F __start_kubectl klf # Enable Bash completion for `klf`
 complete -F __start_kubectl kls # Enable Bash completion for `kls`
@@ -69,10 +71,13 @@ function kubectl_container_names() {
   done
 }
 function kubectl_debug() {
-  kubectl exec -it ${1} -- /bin/bash
+  kubectl exec -it jro-debug "${1:-$DEBUG_IMAGE}" -- /bin/bash
 }
 function kubectl_run() {
   kubectl run -it jro-debug --image="${1}" --restart=Never -- /bin/bash
+}
+function kubectl_secret() {
+  kc get secret "$1" -o json | jq '.data | map_values(@base64d)'
 }
 
 alias kls='kubectl_get'
@@ -91,6 +96,7 @@ alias kcnames='kubectl_container_names'
 alias kdebug='kubectl_debug'
 alias kbug='kubectl_debug'
 alias krun='kubectl_run'
+alias ksecret='kubectl_secret'
 
 function minikube_start() {
   minikube start --vm-driver=virtualbox
