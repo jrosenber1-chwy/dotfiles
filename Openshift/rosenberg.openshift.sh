@@ -12,7 +12,7 @@ complete -F __start_kubectl kc # Enable Bash completion for `kc`
 complete -F __start_kubectl klf # Enable Bash completion for `klf`
 complete -F __start_kubectl kls # Enable Bash completion for `kls`
 
-source "${brew}/opt/kube-ps1/share/kube-ps1.sh"
+source "${BREW}/opt/kube-ps1/share/kube-ps1.sh"
 # echo "Pre OpenShift PS1: $PS1" # DEBUG
 export PS1_STATUS=' $(kube_ps1)'"${PS1_STATUS}"
 # echo "Post OpenShift PS1: $PS1" # DEBUG

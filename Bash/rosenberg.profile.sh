@@ -30,17 +30,3 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias flushcache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
-
-########################################
-# Functions
-########################################
-
-# Determine dotfiles modules to load
-dotfiles_include() { # Expects one argument -- module name
-  if [[ ! -f $DOTFILESTOLOAD ]]; then
-    return 2 # Return failure immediately if we can't find $DOTFILESTOLOAD
-  else
-    matches=$(grep -cix "$1" $DOTFILESTOLOAD) # Count the number of times module name appears
-    [[ $matches -eq 1 ]] # Return success if it appears at least once, failure otherwise
-  fi
-}

@@ -12,18 +12,18 @@ export PS1_STATUS="${PS1_STATUS}"' [$(__git_ps1 "%s")] '
 # export PROMPT_COMMAND="__git_ps1 \"${PS1_START}${PS1_STATUS}\" \"${PS1_END}\""
 
 # Source these if Git is installed through Homebrew
-if [ -f "${brew}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+if [ -f "${BREW}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   echo "Using Git via Homebrew: $(which git)"
-  source "${brew}/etc/bash_completion.d/git-completion.bash"
-  # source "${brew}/opt/bash-git-prompt/share/gitprompt.sh" # bash-git-prompt is too heavy
-  source "${brew}/etc/bash_completion.d/git-prompt.sh"
+  source "${BREW}/etc/bash_completion.d/git-completion.bash"
+  # source "${BREW}/opt/bash-git-prompt/share/gitprompt.sh" # bash-git-prompt is too heavy
+  source "${BREW}/etc/bash_completion.d/git-prompt.sh"
 
   # Config for bash-git-prompt
   # see: https://github.com/magicmonty/bash-git-prompt
   ### NOTE:
   ### Replacing bash-git-prompt with git-prompt,
   ### Because bash-git-prompt takes over the PROMPT_COMMAND variable
-  # __GIT_PROMPT_DIR="${brew}/opt/bash-git-prompt/share"
+  # __GIT_PROMPT_DIR="${BREW}/opt/bash-git-prompt/share"
   # GIT_PROMPT_ONLY_IN_REPO=1
   # GIT_PROMPT_IGNORE_SUBMODULES=1
   # GIT_PROMPT_SHOW_UPSTREAM=1

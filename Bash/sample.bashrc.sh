@@ -11,13 +11,21 @@ if [ -f ~/.profile ]; then
 fi
 
 ########################################
-# Project-specific aliases
+# Set environment variables specific to this machine
 ########################################
 
-# Include links to any alias files specific to this computer
+PROFILE_BASHRC=0
+DEBUG_BASHRC=0
+BREW="/usr/local"
 
 ########################################
 # Source the rest from dotfiles
 ########################################
 
 source "$DOTFILES/Bash/rosenberg.bashrc.sh"
+
+########################################
+# Additional commands that are:
+# (1) machine-specific
+# (2) not in a source-controlled script
+########################################
