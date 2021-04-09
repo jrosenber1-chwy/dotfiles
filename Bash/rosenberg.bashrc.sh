@@ -42,6 +42,7 @@ dotfiles_include "java"       && sources+=("$DOTFILES/Java/rosenberg.java.sh") #
 dotfiles_include "openshift"  && sources+=("$DOTFILES/Openshift/rosenberg.openshift.sh") # Openshift
 dotfiles_include "olson"      && sources+=("$DOTFILES/Olson/rosenberg.olson.sh") # Work-specific config
 dotfiles_include "aws"        && sources+=("$DOTFILES/AWS/rosenberg.aws.sh") #AWS
+dotfiles_include "golang"     && sources+=("$DOTFILES/GoLang/rosenberg.golang.sh") #Go
 dotfiles_include "git"        && sources+=("$DOTFILES/Git/rosenberg.git.sh") # Git
 
 for source in ${sources[@]}; do
