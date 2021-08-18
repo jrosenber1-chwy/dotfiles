@@ -39,7 +39,8 @@ dotfiles_include "docker"     && sources+=("$DOTFILES/Docker/rosenberg.docker.sh
 dotfiles_include "dotnet"     && sources+=("$DOTFILES/Dotnet/rosenberg.dotnet.sh") # .NET
 dotfiles_include "maven"      && sources+=("$DOTFILES/Maven/rosenberg.maven.sh") #Maven
 dotfiles_include "java"       && sources+=("$DOTFILES/Java/rosenberg.java.sh") # Java
-dotfiles_include "openshift"  && sources+=("$DOTFILES/Openshift/rosenberg.openshift.sh") # Openshift
+(dotfiles_include "kubernetes" || dotfiles_include "openshift") && \
+                                 sources+=("$DOTFILES/kubernetes/rosenberg.kubernetes.sh") # kubernetes
 dotfiles_include "olson"      && sources+=("$DOTFILES/Olson/rosenberg.olson.sh") # Work-specific config
 dotfiles_include "aws"        && sources+=("$DOTFILES/AWS/rosenberg.aws.sh") #AWS
 dotfiles_include "golang"     && sources+=("$DOTFILES/GoLang/rosenberg.golang.sh") #Go

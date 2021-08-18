@@ -12,6 +12,6 @@ maven
 node
 # node_olson
 # olson
-openshift
+kubernetes
 web
 vscode

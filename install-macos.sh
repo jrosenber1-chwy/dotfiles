@@ -47,11 +47,19 @@ if dotfiles_include "bash"; then # Bash development... Bash itself it always nee
   brew install bats-core gnu-getopt || true
 fi
 
-if dotfiles_include "openshift"; then
-  brew install openshift-cli hyperkit docker-machine-driver-hyperkit helm kube-ps1 || true
+if dotfiles_include "kubernetes"; then
+  brew install kubectl hyperkit docker-machine-driver-hyperkit helm kube-ps1 || true
   sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-  brew cask install minishift || true
+
+  # Install krew
+  cd "$(mktemp -d)" && \
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" && \
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" && \
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz" && \
+  tar zxvf krew.tar.gz && \
+  KREW=./krew-"${OS}_${ARCH}" && \
+  "$KREW" install krew
 fi
 
 if dotfiles_include "web"; then
