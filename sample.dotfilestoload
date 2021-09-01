@@ -4,6 +4,7 @@
 
 aws
 bash
+# chewy
 docker
 dotnet
 git
@@ -15,3 +16,4 @@ node
 kubernetes
 web
 vscode
+golang
