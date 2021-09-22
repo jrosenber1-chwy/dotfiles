@@ -8,3 +8,12 @@
 # - https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/
 function Use-Profile { $profile | Select * } 
 Set-Alias -Name profile -Value Use-Profile
+
+Function Test-CommandExists{
+    Param ($command)
+    try {
+        if(Get-Command $command){RETURN $true}
+    }
+    catch {Write-Host “$command does not exist”; RETURN $false}
+    finally {$ErrorActionPreference=$oldPreference}
+} #end function test-CommandExists

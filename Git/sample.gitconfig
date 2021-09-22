@@ -8,4 +8,5 @@
 
 [include]
   # Path expansion not supported, so can't use env variables here
+  # Make sure to use forward slashes, even on Windows!
 	path = ~/dotfiles/Git/rosenberg.gitconfig

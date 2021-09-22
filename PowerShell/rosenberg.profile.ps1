@@ -6,21 +6,6 @@ $Env:XDG_DATA_HOME="$home/.local/share"
 $Env:XDG_CONFIG_HOME="$home/.config"
 
 ########################################
-# Load modules
-########################################
-
-# Place code in a standard path for modules
-# Or install with: Install-Module module-name -Scope CurrentUser
-
-Import-Module posh-git
-$global:GitPromptSettings.BeforeText = '['
-$global:GitPromptSettings.AfterText  = '] '
-
-Import-Module oh-my-posh
-Set-Theme Paradox
-$DefaultUser = 'Jeff' # oh-my-posh configuration
-
-########################################
 # Source Path on macOS
 # Per https://github.com/PowerShell/PowerShell/issues/6027
 ########################################
@@ -72,14 +57,45 @@ if (Use-Dotfile "olson") {
 }
 
 ########################################
+# Load modules
+########################################
+
+# Place code in a standard path for modules
+# Or install with: Install-Module module-name -Scope CurrentUser
+
+Import-Module posh-git
+Import-Module oh-my-posh
+
+########################################
 # Customize the prompt
 ########################################
 
-function prompt {
-  $origLastExitCode = $LASTEXITCODE
-  Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
-  Write-VcsStatus
-  Write-Host #Newline
-  $LASTEXITCODE = $origLastExitCode
-  "$('>' * ($nestedPromptLevel + 1)) "
+# posh-git prompt
+function global:PromptWriteErrorInfo() {
+  if ($global:GitPromptValues.DollarQuestion) { return }
+
+  if ($global:GitPromptValues.LastExitCode) {
+      "`e[31m(" + $global:GitPromptValues.LastExitCode + ") `e[0m"
+  }
+  else {
+      "`e[31m! `e[0m"
+  }
 }
+$GitPromptSettings.DefaultPromptPath.ForegroundColor = 0x00FF00
+$GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n$(PromptWriteErrorInfo)'
+
+# global pwsh prompt
+Set-PoshPrompt -Theme ys
+# $DefaultUser = 'Jeff' # oh-my-posh configuration
+
+# function prompt {
+#   $DebugPreference = "SilentlyContinue"
+#   $origLastExitCode = $LASTEXITCODE
+#   Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
+#   Write-VcsStatus -
+#   Write-Host #Newline
+#   $LASTEXITCODE = $origLastExitCode
+#   "$('>' * ($nestedPromptLevel + 1)) "
+#   & $GitPromptScriptBlock -
+#   $DebugPreference = "Continue"
+# }

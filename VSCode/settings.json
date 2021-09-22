@@ -14,9 +14,8 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "workbench.panel.location": "bottom",
-  "window.zoomLevel": 0,
   "window.newWindowDimensions": "inherit",
-  "editor.fontFamily": "'FuraCode Nerd Font', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FuraCode Nerd Font', 'FiraCode NF', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.checkProjectSettingsExclusions": false,
   "workbench.list.horizontalScrolling": true,
@@ -32,7 +31,10 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "extensions.ignoreRecommendations": true,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'FuraCode Nerd Font', 'FiraCode NF', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.env.windows": {
+    "LC_ALL": "C.UTF-8"
+  },
   "powershell.promptToUpdatePowerShell": false,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.windowsExec": "pwsh.exe",
@@ -55,5 +57,10 @@
       "password": "{{put-password-here}}"
     }
   ],
-  "workbench.colorTheme": "Default Light+"
+  "workbench.colorTheme": "Default Light+",
+  "window.zoomLevel": -1,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontLigatures": true,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.fontWeight": "normal"
 }
