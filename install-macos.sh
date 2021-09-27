@@ -24,7 +24,7 @@ fi
 # Install Homebrew packages
 ########################################
 
-brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 || true
+brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 nerdfont || true
 brew cask install powershell || true
 
 if dotfiles_include "java"; then

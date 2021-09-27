@@ -15,7 +15,7 @@
   "editor.renderWhitespace": "all",
   "workbench.panel.location": "bottom",
   "window.newWindowDimensions": "inherit",
-  "editor.fontFamily": "'FuraCode Nerd Font', 'FiraCode NF', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FuraCode Nerd Font', 'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.checkProjectSettingsExclusions": false,
   "workbench.list.horizontalScrolling": true,
@@ -31,7 +31,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "extensions.ignoreRecommendations": true,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'FuraCode Nerd Font', 'FiraCode NF', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'FuraCode Nerd Font', 'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.env.windows": {
     "LC_ALL": "C.UTF-8"
   },
