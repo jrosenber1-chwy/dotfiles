@@ -8,6 +8,10 @@ $VerbosePreference = "SilentlyContinue"
 $Env:DOTFILES="$home/dotfiles" # environment variable for my personal dotfiles
 $Env:DOTFILESTOLOAD="$home/.dotfilestoload" # list of dotfiles modules to load
 
+# Uncomment to enable debugging/profiling bashrc
+# $Env:PROFILE_STARTUP = $true
+# $Env:DEBUG_STARTUP = $true
+
 # Shared configuration
 . "$Env:DOTFILES/PowerShell/rosenberg.profile.ps1"
 

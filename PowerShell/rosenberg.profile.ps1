@@ -1,9 +1,19 @@
 ########################################
+# Optionally enable debugging/profiling bashrc
+########################################
+$Env:PROFILE_STARTUP ??= $false
+$Env:DEBUG_STARTUP ??= $false
+if ($Env:PROFILE_STARTUP) {
+  $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+}
+
+########################################
 # Environment variables
 ########################################
 
 $Env:XDG_DATA_HOME="$home/.local/share"
 $Env:XDG_CONFIG_HOME="$home/.config"
+$Env:USE_OH_MY_POSH ??= $true
 
 ########################################
 # Source Path on macOS
@@ -64,38 +74,50 @@ if (Use-Dotfile "olson") {
 # Or install with: Install-Module module-name -Scope CurrentUser
 
 Import-Module posh-git
-Import-Module oh-my-posh
+if ($Env:USE_OH_MY_POSH -ne "false") {
+  Import-Module oh-my-posh
+}
 
 ########################################
 # Customize the prompt
 ########################################
 
 # posh-git prompt
-function global:PromptWriteErrorInfo() {
-  if ($global:GitPromptValues.DollarQuestion) { return }
+# function global:PromptWriteErrorInfo() {
+#   if ($global:GitPromptValues.DollarQuestion) { return }
 
-  if ($global:GitPromptValues.LastExitCode) {
-      "`e[31m(" + $global:GitPromptValues.LastExitCode + ") `e[0m"
-  }
-  else {
-      "`e[31m! `e[0m"
-  }
-}
-$GitPromptSettings.DefaultPromptPath.ForegroundColor = 0x00FF00
-$GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n$(PromptWriteErrorInfo)'
+#   if ($global:GitPromptValues.LastExitCode) {
+#       "`e[31m(" + $global:GitPromptValues.LastExitCode + ") `e[0m"
+#   }
+#   else {
+#       "`e[31m! `e[0m"
+#   }
+# }
+# $GitPromptSettings.DefaultPromptPath.ForegroundColor = 0x00FF00
+# $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n$(PromptWriteErrorInfo)'
 
 # global pwsh prompt
-Set-PoshPrompt -Theme ys
-# $DefaultUser = 'Jeff' # oh-my-posh configuration
+if ($Env:USE_OH_MY_POSH) {
+  Set-PoshPrompt -Theme ys
+}
+else {
+  function prompt {
+    $origDebugPreference = $DebugPreference
+    $origLastExitCode = $LASTEXITCODE
+    $DebugPreference = "SilentlyContinue"
 
-# function prompt {
-#   $DebugPreference = "SilentlyContinue"
-#   $origLastExitCode = $LASTEXITCODE
-#   Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
-#   Write-VcsStatus -
-#   Write-Host #Newline
-#   $LASTEXITCODE = $origLastExitCode
-#   "$('>' * ($nestedPromptLevel + 1)) "
-#   & $GitPromptScriptBlock -
-#   $DebugPreference = "Continue"
-# }
+    Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
+    Write-VcsStatus -
+    Write-Host #Newline
+    $LASTEXITCODE = $origLastExitCode
+    "$('>' * ($nestedPromptLevel + 1)) "
+    # & $GitPromptScriptBlock - # This was causing a doubled prompt, use one method or the other
+    
+    $DebugPreference = $origDebugPreference
+  }
+}
+
+if ($Env:PROFILE_STARTUP) {
+  Write-Host "Executed profile in $($stopwatch.Elapsed.TotalMilliseconds) milliseconds"
+  $stopwatch.Stop()
+}

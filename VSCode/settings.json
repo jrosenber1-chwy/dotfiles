@@ -24,17 +24,64 @@
   // Terminal
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.developer.editorServicesLogLevel": "Verbose",
-  "terminal.integrated.shell.windows": "pwsh.exe",
-  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
-  "terminal.integrated.shellArgs.osx": [],
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "path": [
+        "pwsh.exe",
+        "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      ],
+      "args": [],
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.windowsEnableConpty": true,
+  "terminal.integrated.env.windows": {
+    "LC_ALL": "C.UTF-8",
+    "USE_OH_MY_POSH": "" // empty string = falsey. don't use oh-my-posh, it's having issues rendering in VSCode on Windows
+  },
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": [
+        "-l"
+      ],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": [
+        "-l"
+      ]
+    },
+    "fish": {
+      "path": "fish",
+      "args": [
+        "-l"
+      ]
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.osx": "pwsh",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "extensions.ignoreRecommendations": true,
   "java.errors.incompleteClasspath.severity": "ignore",
   "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'FuraCode Nerd Font', 'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-  "terminal.integrated.env.windows": {
-    "LC_ALL": "C.UTF-8"
-  },
   "powershell.promptToUpdatePowerShell": false,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.external.windowsExec": "pwsh.exe",
@@ -62,5 +109,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "editor.fontLigatures": true,
   "terminal.integrated.allowChords": false,
-  "terminal.integrated.fontWeight": "normal"
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.detectLocale": "on"
 }
