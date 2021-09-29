@@ -65,6 +65,9 @@ if (Use-Dotfile "maven") {
 if (Use-Dotfile "olson") {
   . "$Env:DOTFILES/Olson/rosenberg.olson.ps1"
 }
+if (Use-Dotfile "chewy") {
+  . "$Env:DOTFILES/Chewy/rosenberg.chewy.ps1"
+}
 
 ########################################
 # Load modules
