@@ -104,7 +104,7 @@ if ($Env:USE_OH_MY_POSH -ne "false") {
 
 # global pwsh prompt
 if ($Env:USE_OH_MY_POSH) {
-  Set-PoshPrompt -Theme ys
+  Set-PoshPrompt -Theme patriksvensson
 }
 else {
   function prompt {

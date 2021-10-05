@@ -105,10 +105,12 @@
     }
   ],
   "workbench.colorTheme": "Default Light+",
-  "window.zoomLevel": -1,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.fontLigatures": true,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.detectLocale": "on"
+  "terminal.integrated.detectLocale": "on",
+  "editor.fontSize": 12,
+  "debug.console.fontSize": 12,
+  "terminal.integrated.fontSize": 12
 }
