@@ -68,6 +68,9 @@ if (Use-Dotfile "olson") {
 if (Use-Dotfile "chewy") {
   . "$Env:DOTFILES/Chewy/rosenberg.chewy.ps1"
 }
+if (Use-Dotfile "cli_tools") {
+  . "$Env:DOTFILES/CLI_Tools/rosenberg.tools.ps1"
+}
 
 ########################################
 # Load modules

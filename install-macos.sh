@@ -96,3 +96,10 @@ if dotfiles_include "olson"; then
   curl https://raw.githubusercontent.com/ahnick/encpass.sh/master/encpass.sh -o /usr/local/bin/encpass.sh && \
   chmod u+x /usr/local/bin/encpass.sh
 fi
+
+if dotfiles_include "cli_tools"; then
+  brew install shpotify
+  pushd ${HOME}
+  ln -s "$DOTFILES/CLI_Tools/.shpotify.cfg"
+  echo "To enabled shpotify, add a SHPOTIFY_CLIENT_SECRET environment variable to your profile scripts"
+fi
