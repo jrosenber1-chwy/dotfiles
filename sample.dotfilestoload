@@ -18,4 +18,5 @@ web
 vscode
 golang
 powershell
-cli_util
+cli_tools
+sql

@@ -45,6 +45,7 @@ dotfiles_include "olson"      && sources+=("$DOTFILES/Olson/rosenberg.olson.sh")
 dotfiles_include "aws"        && sources+=("$DOTFILES/AWS/rosenberg.aws.sh") #AWS
 dotfiles_include "golang"     && sources+=("$DOTFILES/GoLang/rosenberg.golang.sh") #Go
 dotfiles_include "git"        && sources+=("$DOTFILES/Git/rosenberg.git.sh") # Git
+dotfiles_include "sql"        && sources+=("$DOTFILES/Git/rosenberg.sql.sh") # SQL
 
 for source in ${sources[@]}; do
 	if [[ ${PROFILE_BASHRC} -eq 1 ]]; then

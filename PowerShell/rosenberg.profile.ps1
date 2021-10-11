@@ -71,6 +71,9 @@ if (Use-Dotfile "chewy") {
 if (Use-Dotfile "cli_tools") {
   . "$Env:DOTFILES/CLI_Tools/rosenberg.tools.ps1"
 }
+if (Use-Dotfile "sql") {
+  . "$Env:DOTFILES/SQL/rosenberg.sql.ps1"
+}
 
 ########################################
 # Load modules

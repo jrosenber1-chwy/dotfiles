@@ -24,8 +24,11 @@ fi
 # Install Homebrew packages
 ########################################
 
-brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 nerdfont || true
+brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 nerdfont pyenv|| true
 brew cask install powershell || true
+
+# Update python with the latest python 3 version:
+# https://opensource.com/article/19/5/python-3-default-mac
 
 if dotfiles_include "java"; then
   brew tap AdoptOpenJDK/openjdk || true
@@ -101,5 +104,15 @@ if dotfiles_include "cli_tools"; then
   brew install shpotify
   pushd ${HOME}
   ln -s "$DOTFILES/CLI_Tools/.shpotify.cfg"
-  echo "To enabled shpotify, add a SHPOTIFY_CLIENT_SECRET environment variable to your profile scripts"
+  echo "To enable shpotify, add a SHPOTIFY_CLIENT_SECRET environment variable to your profile scripts"
+fi
+
+if dotfiles_include "sql"; then
+  pip install mssql-cli
+  pushd "$XDG_CONFIG_HOME/mssqlcli"
+  rm config
+  ln -s "$DOTFILES/SQL/mssqlcli-light.config" "config"
+  ln -s "$DOTFILES/SQL/mssqlcli-light.config"
+  ln -s "$DOTFILES/SQL/mssqlcli-dark.config"
+  popd
 fi
