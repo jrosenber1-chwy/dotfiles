@@ -116,3 +116,12 @@ if dotfiles_include "sql"; then
   ln -s "$DOTFILES/SQL/mssqlcli-dark.config"
   popd
 fi
+
+if dotfiles_include "amethyst"; then
+  brew install --cask amethyst
+  pushd "${HOME}/Library/Preferences"
+  rm -f "com.amethyst.Amethyst.plist"
+  ln -s "$DOTFILES/Amethyst/com.amethyst.Amethyst.plist"
+  popd
+  echo "To enable Amethyst, manually launch it and provide the required accessibility permissions"
+fi
