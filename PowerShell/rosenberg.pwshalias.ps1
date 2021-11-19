@@ -7,6 +7,13 @@
 # - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles
 # - https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/
 
+function Get-Profile { $profile | Select-Object * } 
+Set-Alias -Name profile -Value Get-Profile
+
+function Initialize-Profile {
+    & $profile.CurrentUserAllHosts
+}
+
 ##
 # Directory stacks
 ##
@@ -51,9 +58,6 @@ function showd ($StackName = $null) {
         Get-Location -Stack
     }
 }
-
-function Use-Profile { $profile | Select * } 
-Set-Alias -Name profile -Value Use-Profile
 
 # Replacment for GNU `which`
 # Partially via: https://devblogs.microsoft.com/scripting/use-a-powershell-function-to-see-if-a-command-exists/ 
