@@ -20,6 +20,7 @@
   "java.configuration.checkProjectSettingsExclusions": false,
   "workbench.list.horizontalScrolling": true,
   "editor.emptySelectionClipboard": false,
+  "editor.bracketPairColorization.enabled": true,
 
   // Terminal
   "powershell.integratedConsole.showOnStartup": false,
