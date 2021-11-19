@@ -14,6 +14,32 @@ function Initialize-Profile {
     & $profile.CurrentUserAllHosts
 }
 
+function Set-Debug {
+    Param (
+        [boolean]$Enabled = $true
+    )
+
+    if ($Enabled) {
+        $DebugPreference = "Continue"
+    }
+    else {
+        $DebugPreference = "SilentlyContinue"
+    }
+}
+
+function Set-Verbose {
+    Param (
+        [boolean]$Enabled = $true
+    )
+
+    if ($Enabled) {
+        $VerbosePreference = "Continue"
+    }
+    else {
+        $VerbosePreference = "SilentlyContinue"
+    }
+}
+
 ##
 # Directory stacks
 ##
@@ -59,6 +85,8 @@ function showd ($StackName = $null) {
     }
 }
 
+# Aliases for GNU functions/commands
+
 # Replacment for GNU `which`
 # Partially via: https://devblogs.microsoft.com/scripting/use-a-powershell-function-to-see-if-a-command-exists/ 
 function Test-CommandExists {
@@ -71,32 +99,8 @@ function Test-CommandExists {
         return $false
     }
 } #end function test-CommandExists
+
 if ($IsWindows) {
     Set-Alias -Name which -Value Test-CommandExists
-}
-
-function Set-Debug {
-    Param (
-        [boolean]$Enabled = $true
-    )
-
-    if ($Enabled) {
-        $DebugPreference = "Continue"
-    }
-    else {
-        $DebugPreference = "SilentlyContinue"
-    }
-}
-
-function Set-Verbose {
-    Param (
-        [boolean]$Enabled = $true
-    )
-
-    if ($Enabled) {
-        $VerbosePreference = "Continue"
-    }
-    else {
-        $VerbosePreference = "SilentlyContinue"
-    }
+    Set-Alias -Name curl -Value Invoke-RestMethod
 }
