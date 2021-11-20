@@ -2,8 +2,10 @@
 # include each module to load below, each on its own line
 # comment out or remove lines that aren't wanted
 
+amethyst
 aws
 bash
+# chewy
 docker
 dotnet
 git
@@ -15,3 +17,7 @@ node
 kubernetes
 web
 vscode
+golang
+powershell
+cli_tools
+sql

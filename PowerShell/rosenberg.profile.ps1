@@ -1,24 +1,19 @@
 ########################################
+# Optionally enable debugging/profiling bashrc
+########################################
+$Env:PROFILE_STARTUP ??= $false
+$Env:DEBUG_STARTUP ??= $false
+if ($Env:PROFILE_STARTUP) {
+  $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+}
+
+########################################
 # Environment variables
 ########################################
 
 $Env:XDG_DATA_HOME="$home/.local/share"
 $Env:XDG_CONFIG_HOME="$home/.config"
-
-########################################
-# Load modules
-########################################
-
-# Place code in a standard path for modules
-# Or install with: Install-Module module-name -Scope CurrentUser
-
-Import-Module posh-git
-$global:GitPromptSettings.BeforeText = '['
-$global:GitPromptSettings.AfterText  = '] '
-
-Import-Module oh-my-posh
-Set-Theme Paradox
-$DefaultUser = 'Jeff' # oh-my-posh configuration
+$Env:USE_OH_MY_POSH ??= $true
 
 ########################################
 # Source Path on macOS
@@ -70,16 +65,68 @@ if (Use-Dotfile "maven") {
 if (Use-Dotfile "olson") {
   . "$Env:DOTFILES/Olson/rosenberg.olson.ps1"
 }
+if (Use-Dotfile "chewy") {
+  . "$Env:DOTFILES/Chewy/rosenberg.chewy.ps1"
+}
+if (Use-Dotfile "cli_tools") {
+  . "$Env:DOTFILES/CLI_Tools/rosenberg.tools.ps1"
+}
+if (Use-Dotfile "sql") {
+  . "$Env:DOTFILES/SQL/rosenberg.sql.ps1"
+}
+
+########################################
+# Load modules
+########################################
+
+# Place code in a standard path for modules
+# Or install with: Install-Module module-name -Scope CurrentUser
+
+Import-Module posh-git
+if ($Env:USE_OH_MY_POSH -ne "false") {
+  Import-Module oh-my-posh
+}
 
 ########################################
 # Customize the prompt
 ########################################
 
-function prompt {
-  $origLastExitCode = $LASTEXITCODE
-  Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
-  Write-VcsStatus
-  Write-Host #Newline
-  $LASTEXITCODE = $origLastExitCode
-  "$('>' * ($nestedPromptLevel + 1)) "
+# posh-git prompt
+# function global:PromptWriteErrorInfo() {
+#   if ($global:GitPromptValues.DollarQuestion) { return }
+
+#   if ($global:GitPromptValues.LastExitCode) {
+#       "`e[31m(" + $global:GitPromptValues.LastExitCode + ") `e[0m"
+#   }
+#   else {
+#       "`e[31m! `e[0m"
+#   }
+# }
+# $GitPromptSettings.DefaultPromptPath.ForegroundColor = 0x00FF00
+# $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n$(PromptWriteErrorInfo)'
+
+# global pwsh prompt
+if ($Env:USE_OH_MY_POSH) {
+  Set-PoshPrompt -Theme patriksvensson
+}
+else {
+  function prompt {
+    $origDebugPreference = $DebugPreference
+    $origLastExitCode = $LASTEXITCODE
+    $DebugPreference = "SilentlyContinue"
+
+    Write-Host "$($ExecutionContext.SessionState.Path.CurrentLocation) " -ForegroundColor Green -NoNewline
+    Write-VcsStatus -
+    Write-Host #Newline
+    $LASTEXITCODE = $origLastExitCode
+    "$('>' * ($nestedPromptLevel + 1)) "
+    # & $GitPromptScriptBlock - # This was causing a doubled prompt, use one method or the other
+    
+    $DebugPreference = $origDebugPreference
+  }
+}
+
+if ($Env:PROFILE_STARTUP) {
+  Write-Host "Executed profile in $($stopwatch.Elapsed.TotalMilliseconds) milliseconds"
+  $stopwatch.Stop()
 }

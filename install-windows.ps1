@@ -7,7 +7,7 @@ if ( Get-ExecutionPolicy -eq "Restricted" ) {
     throw "Insufficient execution policy to run this script. Set execution policy to Remote-Signed and run this script again."
 }
 
-if (! Test-Path -Path "$home/.dotfilestoload") {
+if (! (Test-Path -Path "$home/.dotfilestoload")) {
     throw "Before installation, please define all modules to be loaded in `$HOME/.dotfilestoload"
 }
 

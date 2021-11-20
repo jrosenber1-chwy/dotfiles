@@ -32,6 +32,8 @@
 	devp = "!git checkout develop && git pull"
 	main = "checkout main"
 	mainp = "!git checkout main && git pull"
+	master = "checkout master"
+	masterp = "!git checkout master && git pull"
 	pushup = "push -u origin HEAD"
 	sha = rev-parse HEAD
 	shashort = rev-parse --short HEAD

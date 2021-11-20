@@ -16,14 +16,19 @@ dotfiles_include() {
 # Install Homebrew
 ########################################
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! which brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 ########################################
 # Install Homebrew packages
 ########################################
 
-brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 || true
+brew install bash lzo gettext readline ripgrep coreutils bash-completion@2 nerdfont pyenv|| true
 brew cask install powershell || true
+
+# Update python with the latest python 3 version:
+# https://opensource.com/article/19/5/python-3-default-mac
 
 if dotfiles_include "java"; then
   brew tap AdoptOpenJDK/openjdk || true
@@ -93,4 +98,30 @@ fi
 if dotfiles_include "olson"; then
   curl https://raw.githubusercontent.com/ahnick/encpass.sh/master/encpass.sh -o /usr/local/bin/encpass.sh && \
   chmod u+x /usr/local/bin/encpass.sh
+fi
+
+if dotfiles_include "cli_tools"; then
+  brew install shpotify
+  pushd ${HOME}
+  ln -s "$DOTFILES/CLI_Tools/.shpotify.cfg"
+  echo "To enable shpotify, add a SHPOTIFY_CLIENT_SECRET environment variable to your profile scripts"
+fi
+
+if dotfiles_include "sql"; then
+  pip install mssql-cli
+  pushd "$XDG_CONFIG_HOME/mssqlcli"
+  rm config
+  ln -s "$DOTFILES/SQL/mssqlcli-light.config" "config"
+  ln -s "$DOTFILES/SQL/mssqlcli-light.config"
+  ln -s "$DOTFILES/SQL/mssqlcli-dark.config"
+  popd
+fi
+
+if dotfiles_include "amethyst"; then
+  brew install --cask amethyst
+  pushd "${HOME}/Library/Preferences"
+  rm -f "com.amethyst.Amethyst.plist"
+  ln -s "$DOTFILES/Amethyst/com.amethyst.Amethyst.plist"
+  popd
+  echo "To enable Amethyst, manually launch it and provide the required accessibility permissions"
 fi
