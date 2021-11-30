@@ -68,14 +68,13 @@ if (Use-Dotfile "olson") {
 if (Use-Dotfile "chewy") {
   . "$Env:DOTFILES/Chewy/rosenberg.chewy.ps1"
 }
-if (Use-Dotfile "cli_tools") {
-  . "$Env:DOTFILES/CLI_Tools/rosenberg.tools.ps1"
-}
 if (Use-Dotfile "sql") {
   . "$Env:DOTFILES/SQL/rosenberg.sql.ps1"
 }
 if (Use-Dotfile "node") {
   . "$Env:DOTFILES/Node/rosenberg.node.ps1"
+if (Use-Dotfile "spotify") {
+  . "$Env:DOTFILES/Spotify/rosenberg.spotify.ps1"
 }
 
 ########################################

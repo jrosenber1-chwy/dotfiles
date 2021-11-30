@@ -47,6 +47,7 @@ dotfiles_include "golang"     && sources+=("$DOTFILES/GoLang/rosenberg.golang.sh
 dotfiles_include "git"        && sources+=("$DOTFILES/Git/rosenberg.git.sh") # Git
 dotfiles_include "sql"        && sources+=("$DOTFILES/Git/rosenberg.sql.sh") # SQL
 dotfiles_include "node"       && sources+=("$DOTFILES/Git/rosenberg.node.sh") # Node
+dotfiles_include "spotify"    && sources+=("$DOTFILES/Spotify/rosenberg.spotify.sh") # Spotify
 
 for source in ${sources[@]}; do
 	if [[ ${PROFILE_BASHRC} -eq 1 ]]; then

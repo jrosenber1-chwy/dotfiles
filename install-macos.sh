@@ -100,10 +100,10 @@ if dotfiles_include "olson"; then
   chmod u+x /usr/local/bin/encpass.sh
 fi
 
-if dotfiles_include "cli_tools"; then
+if dotfiles_include "spotify"; then
   brew install shpotify
   pushd ${HOME}
-  ln -s "$DOTFILES/CLI_Tools/.shpotify.cfg"
+  ln -s "$DOTFILES/Spotify/.shpotify.cfg"
   echo "To enable shpotify, add a SHPOTIFY_CLIENT_SECRET environment variable to your profile scripts"
 fi
 

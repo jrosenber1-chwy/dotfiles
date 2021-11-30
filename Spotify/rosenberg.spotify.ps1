@@ -9,3 +9,4 @@ Set-Alias -Name "s" -Value Invoke-Spotify
 Set-Alias -Name "spot" -Value Invoke-Spotify
 function play { & spotify play }
 function pause { & spotify pause }
+function track { & spotify info }
