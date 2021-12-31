@@ -74,6 +74,9 @@ if (Use-Dotfile "cli_tools") {
 if (Use-Dotfile "sql") {
   . "$Env:DOTFILES/SQL/rosenberg.sql.ps1"
 }
+if (Use-Dotfile "node") {
+  . "$Env:DOTFILES/Node/rosenberg.node.ps1"
+}
 
 ########################################
 # Load modules
