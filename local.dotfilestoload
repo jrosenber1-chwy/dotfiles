@@ -7,13 +7,13 @@ aws
 bash
 # chewy
 docker
-dotnet
+# dotnet
 git
 golang
-java
+# java
 kubernetes
-maven
-node
+# maven
+# node
 # node_olson
 # olson
 powershell

@@ -53,7 +53,7 @@
   },
   "terminal.integrated.profiles.osx": {
     "bash": {
-      "path": "bash",
+      "path": "/usr/local/bin/bash",
       "args": [
         "-l"
       ],
@@ -66,13 +66,13 @@
       ]
     },
     "fish": {
-      "path": "fish",
+      "path": "/usr/local/bin/fish",
       "args": [
         "-l"
       ]
     },
     "pwsh": {
-      "path": "pwsh",
+      "path": "/usr/local/bin/pwsh",
       "icon": "terminal-powershell"
     }
   },
