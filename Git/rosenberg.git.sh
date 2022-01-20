@@ -11,9 +11,10 @@
 export PS1_STATUS="${PS1_STATUS}"' [$(__git_ps1 "%s")] '
 # export PROMPT_COMMAND="__git_ps1 \"${PS1_START}${PS1_STATUS}\" \"${PS1_END}\""
 
+echo "Git path: $(which git)"
+
 # Source these if Git is installed through Homebrew
 if [ -f "${BREW}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  echo "Using Git via Homebrew: $(which git)"
   source "${BREW}/etc/bash_completion.d/git-completion.bash"
   # source "${BREW}/opt/bash-git-prompt/share/gitprompt.sh" # bash-git-prompt is too heavy
   source "${BREW}/etc/bash_completion.d/git-prompt.sh"
@@ -30,12 +31,10 @@ if [ -f "${BREW}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   # GIT_PROMPT_START="^ test ^"
 # Source these if Xcode is installed
 elif [ -d /Applications/Xcode.app ]; then
-  echo "Using Git via Xcode: $(which git)"
   source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh"
   source "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
 # Source these if just Command Line Tools are installed
 elif [ -d /Library/Developer ]; then
-  echo "Using Git via Apple CLI tools: $(which git)"
   source "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
   source "/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh"
 fi

@@ -3,8 +3,8 @@
 ########################################
 # Environment variables
 ########################################
-# export SHELL="/usr/bin/env bash" # use Bash
-export SHELL="/usr/local/bin/pwsh" # use Pwsh
+export SHELL="/usr/bin/env bash" # use Bash
+# export SHELL="/usr/local/bin/pwsh" # use Pwsh
 
 ########################################
 # PATH

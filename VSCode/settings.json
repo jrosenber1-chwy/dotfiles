@@ -77,7 +77,7 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.defaultProfile.osx": "pwsh",
+  "terminal.integrated.defaultProfile.osx": "bash",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "extensions.ignoreRecommendations": true,
