@@ -7,17 +7,17 @@ aws
 bash
 # chewy
 docker
-dotnet
+# dotnet
 git
-java
-maven
-node
+golang
+# java
+kubernetes
+# maven
+# node
 # node_olson
 # olson
-kubernetes
-web
-vscode
-golang
 powershell
-cli_tools
+spotify
 sql
+vscode
+web

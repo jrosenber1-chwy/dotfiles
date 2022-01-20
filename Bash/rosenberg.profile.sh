@@ -24,8 +24,8 @@ alias returnd='pushd -0 && dirs -c' # Go back to the beginning of the pushd/popd
 alias showd='dirs -v' # Show the pushd/popd stack
 
 # Mac OS
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder'
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder'
 alias flushcache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
