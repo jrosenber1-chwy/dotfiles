@@ -73,6 +73,7 @@ if (Use-Dotfile "sql") {
 }
 if (Use-Dotfile "node") {
   . "$Env:DOTFILES/Node/rosenberg.node.ps1"
+}
 if (Use-Dotfile "golang") {
   . "$Env:DOTFILES/Golang/rosenberg.golang.ps1"
 }
