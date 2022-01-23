@@ -124,6 +124,7 @@ fi
 
 if dotfiles_include "web"; then
   brew install httpie jq || true
+  brew install --cask "insomnia" || true
 fi
 
 if dotfiles_include "node"; then
@@ -135,7 +136,7 @@ if dotfiles_include "node"; then
 fi
 
 if dotfiles_include "node_olson"; then
-  # Intall NVM
+  # Install NVM
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash || true
   pushd $HOME
   ln -sf "$DOTFILES/Node_Olson/.npmrc"
